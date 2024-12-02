@@ -1,0 +1,351 @@
+
+.button-header{
+    height: auto;
+    width: auto;
+    background-color: #FF7F50;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: none;
+    padding: 15px 32px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-header:hover{
+    box-shadow: 0px 0px 3px 0px #686868;
+}
+
+.a-button-header{
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+.a-button-header:hover{
+    text-decoration: none !important;
+    color: white !important;
+
+}
+
+.a-button-header:visited{
+    color: white !important;
+    font-weight: 600 !important;
+
+}
+
+
+.caja-navegacion{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0 26px;
+}
+
+/* FIN Estilos header */
+
+/* BANNERS */
+
+.banner-principal{
+    display: flex;
+    justify-content: center;
+}
+
+.parrafo-home{
+    text-align: center;
+    width: 60%;
+}
+
+.bloque-parrafo{
+    display: flex;
+    justify-content: center;
+}
+
+.boton-home{
+    display: flex;
+    justify-content: center;
+}
+
+/* contenido banners */
+
+.bloque-banners{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 40px;
+    margin: 26px 0 0 0;
+    border-radius: 16px;
+}
+
+.aling-texto{
+    text-align: left;
+    margin: 13px 0 0 0;
+}
+
+.content-banners{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.banner1{
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.banner2{
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+/* contenido footer*/
+
+.caja-general-footer{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.caja-creator-footer{
+    width: 100%;
+    height: auto;
+    margin: 40px 0 0 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    flex-direction: column;
+    box-shadow: 0px -2px 13px 0px #7272;
+}
+
+/* Caja contenedora formularios*/
+
+.caja-general{
+    background-color: #f4f4f4;
+    border-radius: 16px;
+}
+
+/* contenido formulario login*/
+.caja-textos-login{
+    width: 40%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.caja-formulario-login{
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+/* estilos formulario login*/
+.input-login{
+    width: 80%;
+    height: 45px;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 6px;
+    border:1px solid #686868;
+    margin: 10px 0;
+    color: #686868;
+}
+
+/*
+.lavel-registro{
+    font-size: 14px;
+    text-align: left;
+    color: #333333;
+    font-weight: 600;
+}*/
+
+/* botones formulario login*/
+
+.butto1-login{
+    width: 80%;
+    height: 45px;
+    margin: 13px 0;
+}
+.butto2-login{
+    background-color: white;
+    border: solid 1px;
+    border-color: #FF7F50;
+    color: #FF7F50;;
+}
+
+.butto1-login:hover{
+    width: 80%;
+    height: 45px;
+    background-color:#E67147;
+    box-shadow: 0px 1px 4px 0px #686868;
+}
+
+.butto2-login:hover{
+    background-color: white;
+    border: solid 1px;
+    border-color: #E67147;
+    color: #E67147;
+}
+/* botones carrusel*/
+.button-carrusel:hover{
+    background-color: transparent;
+    
+}
+
+/* Estilos formulario login*/
+.form-login{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Estilos formulario registro*/
+.form-registro{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 10px;
+    
+}
+/* contenido formulario registro*/
+.caja-registro{
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caja-form-registro{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+     
+}
+
+/* estilos formulario registro*/
+.input-registro{
+    width: 48%;
+    height: 45px;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 6px;
+    border:1px solid #686868;
+    margin: 10px 0;
+    color: #686868;
+}
+
+
+/* botones formulario registro*/
+
+.butto1-registro{
+    width: 45%;
+    height: 45px;
+    margin: 13px 0;
+}
+.butto2-registro{
+    width: 45%;
+    height: 45px;
+    background-color: white;
+    border: solid 1px;
+    border-color: #FF7F50;
+    color: #FF7F50;;
+}
+.butto2-registro:hover{
+    background-color: white;
+    border: solid 1px;
+    border-color: #E67147;
+    color: #E67147;
+}
+
+.caja-botones-formulario{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* estilos formulario consulta*/
+.input-consulta{
+    width: 25%;
+    height: 45px;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 6px;
+    border:1px solid #686868;
+    margin: 10px 0;
+    color: #686868;
+}
+
+/* Estilos formulario consulta*/
+.form-consulta{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 10px;
+    
+}
+
+.caja-consulta{
+    width: 95%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    background-color: white;
+    border-radius: 16px;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+/* texto background carrusel*/
+.fondo-text{
+    background-color: white;
+    opacity: 50%;
+    border-radius: 16px;
+}
+
+

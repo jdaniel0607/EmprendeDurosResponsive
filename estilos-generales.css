@@ -1,0 +1,106 @@
+
+
+/* Estilos body */
+body{
+    font-family: 'Roboto', sans-serif !important;
+ }
+ 
+/* Estilos tag */
+a{ 
+    text-decoration: none !important;
+    color:#727272 !important;
+    font-size: 14px !important;
+}
+
+a:hover{
+    text-decoration: underline !important;
+    color: #333333 !important;
+
+}
+
+a:visited{
+    color: #333333 !important;
+    font-weight: 600 !important;
+
+}
+
+h1{
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #1F3A63 !important;
+    text-align: center !important;
+}
+
+h3{
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    color: #333333 !important;
+    text-align: center !important;
+}
+h4{
+    font-size: 14px !important;
+    text-align: left !important;
+    font-weight: 600 !important;
+    color: #333333 !important;
+    margin: 13px 0 0 0 !important;
+}
+
+h2{
+    color: #1F3A63 !important;  
+}
+
+p{
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #868686 !important;
+    margin: 0 !important;
+}
+
+footer{
+    
+    background-color: #f4f4f4 !important;
+    
+}
+
+/* Estilos botones*/
+
+button{
+    height: 50px;
+    width: auto;
+    background-color: #FF7F50;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: none;
+    padding: 15px 32px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+button:hover{
+    background-color:#E67147;
+    box-shadow: 0px 1px 4px 0px #686868;
+}
+
+/* estilos menú navegación
+    gap: 0 26px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}*/
+
+/* estilos forumulario texto área*/
+textarea{
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 6px;
+    border:1px solid #686868;
+    margin: 10px 0;
+    color: #686868;
+}
