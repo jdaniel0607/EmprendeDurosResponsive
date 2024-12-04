@@ -38,7 +38,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <header class="container d-inline p-1 justify-content-center">
     <nav class="navbar navbar-expand-lg w-100">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index.html">
+            <a class="navbar-brand" href="index.php">
             <img src="images/logo-emprendedores.png" alt="Logo Emprendedores">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
