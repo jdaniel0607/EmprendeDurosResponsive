@@ -1,4 +1,4 @@
-document.getElementById('formActualizarDatos').addEventListener('submit', function(event) {
+document.getElementById('formActualizarDatos').addEventListener('submit', function (event) {
     // Evitar el envío tradicional del formulario (recarga de página)
     event.preventDefault();
 

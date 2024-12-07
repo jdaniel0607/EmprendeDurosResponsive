@@ -196,10 +196,10 @@
     margin: 13px 0;
 }
 .butto2-login{
-    background-color: white;
-    border: solid 1px;
-    border-color: #FF7F50;
-    color: #FF7F50;;
+    background-color: white!important;
+    border: solid 1px!important;
+    border-color: #FF7F50!important;
+    color: #FF7F50!important;
 }
 
 .butto1-login:hover{
@@ -210,14 +210,21 @@
 }
 
 .butto2-login:hover{
-    background-color: white;
-    border: solid 1px;
-    border-color: #E67147;
-    color: #E67147;
+    background-color: white!important;
+    border: solid 1px!important;
+    border-color: #E67147!important;
+    color: #E67147!important;
 }
 /* botones carrusel*/
 .button-carrusel:hover{
-    background-color: transparent;
+    background-color: transparent!important;
+    
+}
+/* bullets carrusel*/
+.bullets-carrusel{
+    background-color: #000 !important;
+    width: 30px !important;
+    height: 3px !important;
     
 }
 
@@ -276,7 +283,7 @@
 
 
 /* botones formulario registro*/
-
+/*
 .butto1-registro{
     width: 45%;
     height: 45px;
@@ -296,14 +303,14 @@
     border-color: #E67147;
     color: #E67147;
 }
-
-.caja-botones-formulario{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
+*/
+.btn{
+    color: white !important;
+  }
+.btn:disabled {
+      background-color: #cccccc !important;
+      cursor: not-allowed !important;
+    }
 
 /* estilos formulario consulta*/
 .input-consulta{
@@ -347,5 +354,24 @@
     opacity: 50%;
     border-radius: 16px;
 }
+/* estilos ver/ocultar password*/
+.toggle-eye {
+    position: absolute;
+    top: 43%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+  }
 
+  .password-container {
+    position: relative;
+    display: inline-block;
+  }
 
+/* actualizar datos*/
+ /* Estilo para ocultar inicialmente el div */
+ #infoDiv {
+    display: none; /* El contenido estará oculto inicialmente */
+ }

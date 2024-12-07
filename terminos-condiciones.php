@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon básico -->
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 </head>
 
 <!--comienzo header-->
@@ -48,7 +50,7 @@
 <body class="container">
     <div class="container w-100 my-4 justify-content-center vstack gap-3">
         <h1>Aviso de Privacidad de Emprendeduros</h1>
-        <h3>Fecha de última actualización: 01/12/2024</h3>
+        <h2>Fecha de última actualización: 01/12/2024</h2>
         <p>En <span style="font-weight: 700; color: #000;">Emprendeduros.com</span>, nos comprometemos a proteger y
             respetar la privacidad de nuestros usuarios. Este aviso de privacidad describe cómo recopilamos, usamos,
             almacenamos y protegemos la información personal que obtenemos de los usuarios de nuestra plataforma
@@ -159,7 +161,7 @@
         </div>
         <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
           <a class="col" href="consulta.php">
-            <button>
+            <button class="rounded-2">
               Consultar emprendedores
             </button>
           </a>

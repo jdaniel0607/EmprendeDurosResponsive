@@ -38,6 +38,8 @@ if (isset($_SESSION['registro_exitoso'])) {
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicon básico -->
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 </head>
 
 <!--comienzo header-->
@@ -71,7 +73,6 @@ if (isset($_SESSION['registro_exitoso'])) {
 
 
 <!--inicio body-->
-
 <body class="container">
   <div class="w-100 d-flex flex-column my-4 justify-content-center align-items-center vstack gap-3">
     <h1 class="col">Bienvenidos a Emprendeduros</h1>
@@ -82,15 +83,15 @@ if (isset($_SESSION['registro_exitoso'])) {
     <!--inicio carrusel-->
     <div id="carouselExampleDark" class="carousel carousel-dark slide w-100">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active bullets-carrusel"
           aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2" class="bullets-carrusel"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3" class="bullets-carrusel"></button>
       </div>
       <div class="carousel-inner rounded-4">
         <div class="carousel-item active" data-bs-interval="10000">
           <img src="images/owner-1.jpg" class="d-block w-100" alt="Imagen emprendedor">
-          <div class="carousel-caption d-none d-md-block fondo-text">
+          <div class="carousel-caption d-none d-md-block fondo-text mb-4">
             <h5>Felipe y Gabriel <span style="font-weight: 700;">TechBoost</span> </h5>
             <p style="color: black !important;">Lanzan <span style="font-style: bold;">TechBoost,</span> una startup
               enfocada en el desarrollo de aplicaciones móviles personalizadas para pequeñas y medianas empresas.</p>
@@ -98,7 +99,7 @@ if (isset($_SESSION['registro_exitoso'])) {
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img src="images/owner-4.jpg" class="d-block w-100" alt="Imagen emprendedor">
-          <div class="carousel-caption d-none d-md-block fondo-text">
+          <div class="carousel-caption d-none d-md-block fondo-text mb-4">
             <h5>Laura<span style="font-weight: 700;">Estilo Natural</span> </h5>
             <p style="color: black !important;">Laura crea Estilo Natural, una línea de productos cosméticos naturales y
               orgánicos, diseñados para cuidar la piel con ingredientes provenientes de cultivos responsables.</p>
@@ -107,19 +108,19 @@ if (isset($_SESSION['registro_exitoso'])) {
       </div>
       <div class="carousel-item">
         <img src="images/owner-7.jpg" class="d-block w-100" alt="Imagen emprendedor">
-        <div class="carousel-caption d-none d-md-block fondo-text">
+        <div class="carousel-caption d-none d-md-block fondo-text mb-4">
           <h5>Don Pedro <span style="font-weight: 700;">Frescos del Campo</span></h5>
           <p style="color: black !important;">Don Pedro abre Frescos del Campo, una tienda especializada en la venta de
             frutas y verduras frescas de temporada, provenientes directamente de su propio huerto y de pequeños
             productores locales.</p>
         </div>
       </div>
-      <button class="carousel-control-prev h-100 button-carrusel" type="button" data-bs-target="#carouselExampleDark"
+      <button class="carousel-control-prev h-100 button-carrusel bg-transparent" type="button" data-bs-target="#carouselExampleDark"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next h-100 button-carrusel" type="button" data-bs-target="#carouselExampleDark"
+      <button class="carousel-control-next h-100 button-carrusel bg-transparent" type="button" data-bs-target="#carouselExampleDark"
         data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
@@ -136,8 +137,90 @@ if (isset($_SESSION['registro_exitoso'])) {
       Únete a nuestra comunidad y comienza a construir relaciones con otros emprendedores, a consultar contenido
       especializado y a aprovechar las oportunidades de negocio que la plataforma tiene para ofrecerte.
     </p>
-    <h2>¡Juntos, podemos emprender el camino hacia el éxito!</h2>
+    <h2 class="fst-italic">¡Juntos, podemos emprender el camino hacia el éxito!</h2>
   </div>
+   <!-- Equipo desktop-->
+   <section>
+    <div class="container vstack gap-2 bg-body-tertiary p-lg-4 rounded-4 d-none d-lg-block">
+      <h2 class="fw-semibold">Equipo de trabajo</h2>
+      <div class="row justify-content-center align-items-center">
+        <!-- 1 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Daniel Ramirez</p>
+          <p class="fst-normal text-primary-emphasis text-center">Backend Developer / Project Manager
+          </p>
+        </div>
+        <!-- 2 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Andrés F Marín</p>
+          <p class="fst-normal text-primary-emphasis text-center">Frontend Developer / UX Designer</p>
+        </div>
+        <!-- 3 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Edwin Salazar</p>
+          <p class="text-align-center fst-normal text-primary-emphasis text-center">DevOps Engineer / Scrum Master</p>
+        </div>
+        <!-- 4 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Omar Zapata</p>
+          <p class="fst-normal text-primary-emphasis text-center">Database Administrator / Content
+            Strategistr</p>
+        </div>
+        <!-- 5 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Juan </p>
+          <p class="fst-normal text-primary-emphasis text-center">Test Automation Engineer / QA Tester
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Equipo mobile-->
+  <section>
+    <div class="container vstack gap-2 bg-body-tertiary p-4 rounded-4 d-lg-none d-sm-block ">
+      <h2 class="fw-semibold text-center">Equipo de trabajo</h2>
+      <div class="justify-content-center align-items-center vstack gap-4">
+        <!-- 1 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Daniel Ramirez</p>
+          <p class="text-align-center fst-normal text-primary-emphasis ">Backend Developer / Project Manager
+          </p>
+        </div>
+        <!-- 2 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Andrés F Marín</p>
+          <p class="text-align-center fst-normal text-primary-emphasis">Frontend Developer / UX Designer</p>
+        </div>
+        <!-- 3 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Edwin Salazar</p>
+          <p class="text-align-center fst-normal text-primary-emphasis">DevOps Engineer / Scrum Master</p>
+        </div>
+        <!-- 4 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Omar Zapata</p>
+          <p class="text-align-center fst-normal text-primary-emphasis">Database Administrator / Content
+            Strategistr</p>
+        </div>
+        <!-- 5 -->
+        <div class="col d-flex flex-column align-items-center gap-1">
+          <img src="images/elon-1.webp" class="w-50 rounded-2 filtro-escala-grises">
+          <p class="text-align-center fw-semibold text-dark">Juan </p>
+          <p class="text-align-center fst-normal text-primary-emphasis">Test Automation Engineer / QA Tester
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
@@ -161,7 +244,7 @@ if (isset($_SESSION['registro_exitoso'])) {
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
         <a class="col " href="consulta.php">
-          <button class="rounded-4">
+          <button class="rounded-2">
             Consultar emprendedores
           </button>
         </a>

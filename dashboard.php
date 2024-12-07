@@ -67,68 +67,119 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Emprendeduros</title>
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="estilos-generales.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js"></script>
+  <!-- Estilos generales CSS -->
+  <link rel="stylesheet" href="estilos-generales.css">
+  <!-- fuente google -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="script.js"></script>
+  <!-- Favicon básico -->
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 </head>
+<!--comienzo header-->
+<header class="container d-inline p-1 justify-content-center">
+  <nav class="navbar navbar-expand-lg w-100">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.php">
+        <img src="images/logo-emprendedores.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse align-items-end flex-column" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="login.php">Iniciar sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registro.php">Registrarse</a>
+          </li>
+          <li class="nav-item button-header p-0 m-0">
+            <a class="nav-link a-button-header" aria-current="page" href="consulta.php">Consultar emprendedores</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!--fin del header-->
+
+<!--inicio body-->
 <body class="container mt-5">
-    <h1>Bienvenido, <?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?>!</h1>
+    <h1>¡Bienvenido, <?php echo $usuario['nombre'] . ' ' . $usuario['apellido']; ?>!</h1>
     
-    <div class="card p-4">
-        <h3>Detalles del Usuario</h3>
+    <div class="mb-4">
+        <h2 class="mb-1">Detalles del usuario</h2>
+        <hr class="dashed">
         <p><strong>Correo:</strong> <?php echo $usuario['email']; ?></p>
+        <hr class="dashed">
         <p><strong>Documento:</strong> <?php echo $usuario['documento']; ?></p>
+        <hr class="dashed">
         <p><strong>Teléfono:</strong> <?php echo $usuario['telefono']; ?></p>
+        <hr class="dashed">
         <p><strong>Nombre de la Empresa:</strong> <?php echo $usuario['nombre_empresa']; ?></p>
+        <hr class="dashed">
         <p><strong>Ciudad de la Empresa:</strong> <?php echo $usuario['ciudad']; ?></p>
+        <hr class="dashed">
         <p><strong>Departamento:</strong> <?php echo $usuario['departamento']; ?></p>
-       
+        <hr class="dashed">
         <p><strong>Descripción de la Empresa:</strong> <?php echo $usuario['descripcion']; ?></p>
+        <hr class="dashed">
     </div>
 
-    <h3>Actualizar Datos</h3>
-    <form id="formActualizarDatos" method="POST">
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $usuario['nombre']; ?>">
+    <div id="infoDiv">
+      <h2>Actualizar Datos</h2>
+      <form class="row g-3 p-lg-4 rounded-4" id="formActualizarDatos" method="POST">
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" value="
+				<?php echo $usuario['nombre']; ?>">
         </div>
-        <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $usuario['apellido']; ?>">
+        <div class="form-group col-md-6">
+          <label for="apellido">Apellido:</label>
+          <input type="text" name="apellido" id="apellido" class="form-control" value="
+					<?php echo $usuario['apellido']; ?>">
         </div>
-        <div class="form-group">
-            <label for="telefono">Teléfono:</label>
-            <input type="text" name="telefono" id="telefono" class="form-control" value="<?php echo $usuario['telefono']; ?>">
+        <div class="form-group col-md-6">
+          <label for="telefono">Teléfono:</label>
+          <input type="text" name="telefono" id="telefono" class="form-control" value="
+						<?php echo $usuario['telefono']; ?>">
         </div>
-        <div class="form-group">
-            <label for="email">Correo electrónico:</label>
-            <input type="email" name="email" id="email" class="form-control" value="<?php echo $usuario['email']; ?>">
+        <div class="form-group col-md-6">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" name="email" id="email" class="form-control" value="
+							<?php echo $usuario['email']; ?>">
         </div>
-        <div class="form-group">
-            <label for="nombre_empresa">Nombre de la Empresa:</label>
-            <input type="text" name="nombre_empresa" id="nombre_empresa" class="form-control" value="<?php echo $usuario['nombre_empresa']; ?>">
+        <div class="form-group col-md-6">
+          <label for="nombre_empresa">Nombre de la Empresa:</label>
+          <input type="text" name="nombre_empresa" id="nombre_empresa" class="form-control" value="
+								<?php echo $usuario['nombre_empresa']; ?>">
         </div>
-        
-        <div class="form-group">
-            <label for="descripcion">Descripción de la Empresa:</label>
-            <textarea name="descripcion" id="descripcion" class="form-control"><?php echo $usuario['descripcion']; ?></textarea>
+        <div class="form-group col-md-6">
+          <label for="descripcion">Descripción de la Empresa:</label>
+          <textarea name="descripcion" id="descripcion" class="form-control">
+									<?php echo $usuario['descripcion']; ?>
+								</textarea>
         </div>
-        <div class="form-group">
-            <label for="departamento">Departamento:</label>
-            <input type="text" name="departamento" id="departamento" class="form-control" value="<?php echo $usuario['departamento']; ?>">
+        <div class="form-group col-md-6">
+          <label for="departamento">Departamento:</label>
+          <input type="text" name="departamento" id="departamento" class="form-control" value="
+									<?php echo $usuario['departamento']; ?>">
         </div>
-        <div class="form-group">
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" name="ciudad" id="ciudad" class="form-control" value="<?php echo $usuario['ciudad']; ?>">
+        <div class="form-group col-md-6">
+          <label for="ciudad">Ciudad:</label>
+          <input type="text" name="ciudad" id="ciudad" class="form-control" value="
+										<?php echo $usuario['ciudad']; ?>">
         </div>
-        <button type="submit" name="actualizar" class="btn btn-primary" id="btnActualizar">Actualizar Datos</button>
-    </form>
-
-    <!-- Botón para Cerrar sesión -->
-    <form method="POST">
-        <button type="submit" name="logout" class="btn btn-danger">Cerrar sesión</button>
-    </form>
+      </form>
+    </div>
+    <div class="col-md-12 d-flex align-items-center justify-content-center mb-5 align-text-center hstack gap-2">
+        <button type="submit" name="logout" class="col-md-4 rounded-2 butto2-login">Cerrar sesión</button>
+        <button type="submit" id="btnActualizar" name="logout" class="col-md-4 rounded-2">Actualizar datos</button>
+    </div>
 
     <?php
     // Si se ha presionado el botón de "Cerrar sesión"
@@ -144,6 +195,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
         exit;
     }
     ?>
+    
+    <script>
+        // Ocultar o mostrar datos de registrro
+        const btnActualizar = document.getElementById('btnActualizar');
+        const infoDiv = document.getElementById('infoDiv');
+
+        // Agregar el evento de clic al botón
+        btnActualizar.addEventListener('click', () => {
+            if (infoDiv.style.display === 'none' || infoDiv.style.display === '') {
+                // Mostrar el div
+                infoDiv.style.display = 'block';
+                btnActualizar.textContent = 'Guardar';
+            } else {
+                // Ocultar el div
+                infoDiv.style.display = 'none';
+                btnActualizar.textContent = 'Actualizar datos';
+            }
+        });
+    </script>
 
 </body>
+<!--fin body-->
+
+<!--inicio footer-->
+<footer class="bd-footer py-2 py-md-2 mt-5 bg-body-tertiary">
+  <div class="container py-2 py-md-5 px-2 px-md-3 text-body-secondary">
+    <div class="row d-flex justify-content-around">
+      <div class="col-lg-4 col-mb-1 mb-3 d-flex flex-column align-items-center">
+        <a>
+          <img src="images/logo-emprendedores.png">
+        </a>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
+          <li class="mb-2"><a href="registro.php">Registro</a></li>
+          <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
+        <a class="col " href="consulta.php">
+          <button class="rounded-2">
+            Consultar emprendedores
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-content-center justify-content-center">
+    <p>Creat by Emprendeduros Talento-tech-2024</p>
+  </div>
+</footer>
+<!--fin footer-->
 </html>

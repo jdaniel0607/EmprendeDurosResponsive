@@ -82,6 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicon básico -->
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 </head>
 
 <!--comienzo header-->
@@ -234,9 +236,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <h4 class="mt-4 w-100">Crear contraseña</h4>
       <!--contraseña-->
-      <div class="col-md-6">
+      <div class="col-md-6 password-container">
         <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="clave" name="clave" required>
+        <input type="password" class="form-control" id="clave" name="clave" required placeholder="Ingresa tu contraseña">
+        <span id="toggleEye" class="toggle-eye">🙉</span>
         <p class="text-star">Su contraseña debe tener entre 8 y 20 caracteres, contener letras y números, y no debe
           contenerespacios, caracteres especiales ni emojis.
         </p>
@@ -246,19 +249,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="form-check">
           <input class="form-check-input" type="checkbox" id="terminoscondiciones" name="terminoscondiciones" required>
           <label class="form-check-label" for="gridCheck">
-            Aceptar <a>Términos y condiciones</a>
+            Aceptar <a href="/terminos-condiciones.html">términos y condiciones</a>
           </label>
         </div>
       </div>
       <!--boton de registro-->
       <div class="col-auto d-flex flex-column align-items-center mt-3 align-text-center vstack gap-3">
-        <button type="submit" class="w-75 rounded-4">Registrarse</button>
+        <button type="submit" class="w-50 rounded-2 btn" id="registerButton" name="registerButton" disabled required>Registrarse</button>
       </div>
     </form>
   </div>
-  </div>
+
   <!-- Bootstrap JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <!-- JScript para el checkbox -->
+  <script>
+    // Referencias al checkbox y botón
+    const checkbox = document.getElementById('terminoscondiciones');
+    const button = document.getElementById('registerButton');
+
+    // Evento de cambio en el checkbox
+    checkbox.addEventListener('change', () => {
+      button.disabled = !checkbox.checked;
+    });
+
+    //js para password
+    // Referencias al input y al icono
+    const clave = document.getElementById('clave');
+    const toggleEye = document.getElementById('toggleEye');
+
+    // Evento para alternar la visibilidad de la contraseña
+    toggleEye.addEventListener('click', () => {
+      // Cambiar el tipo del input entre 'password' y 'text'
+      const isPassword = clave.type === 'password';
+      clave.type = isPassword ? 'text' : 'password';
+
+      // Cambiar el ícono entre "🙉" y "🙈" según el estado
+      toggleEye.textContent = isPassword ? '🙈' : '🙉';
+    });
+  </script>
+
 </body>
 <!--fin body-->
 
@@ -280,7 +310,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
         <a class="col" href="consulta.php">
-          <button>
+          <button class="rounded-2">
             Consultar emprendedores
           </button>
         </a>

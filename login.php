@@ -64,6 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicon básico -->
+  <link rel="icon" href="images/favicon.svg" type="image/x-icon">
 </head>
 
 <!--comienzo header-->
@@ -114,8 +116,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </p>
         </div> 
         <div class="col-md-8 d-flex flex-column align-items-center mt-3 align-text-center">
-          <button type="submit" class="w-100 mb-3 rounded-4" id="boton-ingresar" name="boton-ingresar">Ingresar</button>
-          <button type="submit" class="w-100 rounded-4 butto2-login">Cancelar</button>
+          <button type="submit" class="w-100 mb-3 rounded-2" id="boton-ingresar" name="boton-ingresar">Ingresar</button>
+          <button type="submit" class="w-100 rounded-2 butto2-login">Cancelar</button>
         </div>
     </form>
   </div>
@@ -142,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
         <a class="col" href="/consulta.html">
-          <button>
+          <button class="rounded-2">
             Consultar emprendedores
           </button>
         </a>
