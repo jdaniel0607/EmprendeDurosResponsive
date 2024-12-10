@@ -91,21 +91,43 @@ foreach ($ciudades as $ciudad) {
         }
         ?>
 
-        <!-- Aquí va el gráfico -->
-        <h3>Emprendedores por Ciudad</h3>
-        <canvas id="myChart" width="200" height="100"></canvas>
+        <!-- Botón para mostrar el gráfico -->
+       
+        <button id="mostrarGrafico" class="btn btn-primary">Ver Gráfico</button>
+
+        <!-- Contenedor del gráfico, inicialmente oculto -->
+        <div id="contenedorGrafico" style="display: none;" class="mt-3">
+            <h3>Emprendedores por Ciudad</h3>
+            <canvas id="myChart" width="200" height="100"></canvas>
+        </div>
 
         <script>
+            // botón y el contenedor del gráfico
+            const botonGrafico = document.getElementById('mostrarGrafico');
+            const contenedorGrafico = document.getElementById('contenedorGrafico');
+
+            // Creamos evento para mostrar y ocultar el gráfico
+            botonGrafico.addEventListener('click', function() {
+                if (contenedorGrafico.style.display === 'none') {
+                    contenedorGrafico.style.display = 'block'; // Mostrar el gráfico
+                    botonGrafico.textContent = 'Ocultar Gráfico'; // Cambiar el texto del botón
+                } else {
+                    contenedorGrafico.style.display = 'none'; // Ocultar el gráfico
+                    botonGrafico.textContent = 'Ver Gráfico'; // Restaurar el texto del botón
+                }
+            });
+
+            // Configurando el grafico
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
-                type: 'bar', // Tipo de gráfico, puede ser 'pie' para un gráfico circular
+                type: 'bar',
                 data: {
-                    labels: <?php echo json_encode($labels); ?>, // Ciudades
+                    labels: <?php echo json_encode($labels); ?>,
                     datasets: [{
                         label: 'Cantidad de Emprendedores',
-                        data: <?php echo json_encode($data); ?>, // Cantidad de emprendedores por ciudad
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de las barras
-                        borderColor: 'rgba(54, 162, 235, 1)', // Color del borde de las barras
+                        data: <?php echo json_encode($data); ?>,
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     }]
                 },
@@ -119,8 +141,9 @@ foreach ($ciudades as $ciudad) {
             });
         </script>
 
+
         <!-- Tabla de usuarios -->
-        <h3>Usuarios Registrados</h3>
+        
         <table class="table table-bordered table-striped mt-3">
             <thead>
                 <tr>
