@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <header class="container d-inline p-1 justify-content-center">
   <nav class="navbar navbar-expand-lg w-100">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/index.php">
+      <a class="navbar-brand" href="index.php">
         <img src="images/logo-emprendedores.png">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -141,7 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
-        <a class="col" href="/consulta.html">
+        <a class="col" href="/consulta.php">
           <button>
             Consultar emprendedores
           </button>

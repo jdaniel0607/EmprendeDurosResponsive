@@ -31,6 +31,7 @@ if (isset($_SESSION['registro_exitoso'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emprendeduros</title>
   <!-- Estilos CSS -->
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="estilos.css">
   <!-- Estilos generales CSS -->
   <link rel="stylesheet" href="estilos-generales.css">
