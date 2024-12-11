@@ -5,18 +5,18 @@ session_start();
 // Aquí podrías agregar lógicas como la comprobación de la sesión, si el usuario está logueado, etc.
 // Si el formulario de búsqueda se envía, lo procesamos (si se requiere).
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['buscar'])) {
-    $buscar = $_POST['buscar'];
-    // Aquí podrías hacer la consulta a la base de datos con el término de búsqueda.
-    // Ejemplo: echo "Buscando: " . htmlspecialchars($buscar);
+  $buscar = $_POST['buscar'];
+  // Aquí podrías hacer la consulta a la base de datos con el término de búsqueda.
+  // Ejemplo: echo "Buscando: " . htmlspecialchars($buscar);
 }
 
 // Mostrar el mensaje de éxito si existe
 if (isset($_SESSION['registro_exitoso'])) {
-    // Llamar a la función JavaScript para mostrar el mensaje
-    echo "<script>mostrarPopup('" . $_SESSION['registro_exitoso'] . "');</script>";
-    
-    // Eliminar el mensaje de la sesión para que no se repita al refrescar
-    unset($_SESSION['registro_exitoso']);
+  // Llamar a la función JavaScript para mostrar el mensaje
+  echo "<script>mostrarPopup('" . $_SESSION['registro_exitoso'] . "');</script>";
+
+  // Eliminar el mensaje de la sesión para que no se repita al refrescar
+  unset($_SESSION['registro_exitoso']);
 }
 
 ?>
@@ -39,6 +39,8 @@ if (isset($_SESSION['registro_exitoso'])) {
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="script.js" defer></script>
+
 </head>
 
 <!--comienzo header-->
@@ -60,8 +62,11 @@ if (isset($_SESSION['registro_exitoso'])) {
           <li class="nav-item">
             <a class="nav-link" href="registro.php">Registrarse</a>
           </li>
-          <li class="nav-item button-header p-0 m-0">
+          <!--  <li class="nav-item button-header p-0 m-0">
             <a class="nav-link a-button-header" aria-current="page" href="consulta.php">Consultar emprendedores</a>
+          </li>    -->
+          <li class="nav-item button-header p-0 m-0">
+            <a class="nav-link a-button-header" href="#" onclick="mostrarPopup()">Consultar emprendedores</a>
           </li>
         </ul>
       </div>
@@ -125,7 +130,7 @@ if (isset($_SESSION['registro_exitoso'])) {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-       <!--fin carrusel-->
+      <!--fin carrusel-->
     </div>
     <p class="col">
       A través de nuestra plataforma, podrás acceder a recursos clave, consejos prácticos y una red de contactos valiosa
@@ -139,7 +144,37 @@ if (isset($_SESSION['registro_exitoso'])) {
     </p>
     <h2>¡Juntos, podemos emprender el camino hacia el éxito!</h2>
   </div>
+
+
+  <!-- Modal Bootstrap -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Acceso Requerido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Debes iniciar sesión para consultar emprendedores.
+          <br>
+          <a href="login.php">Haz clic aquí para iniciar sesión.</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- Bootstrap JavaScript -->
+  <script>
+    function mostrarPopup() {
+      // Muestra el modal utilizando Bootstrap
+      var myModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      myModal.show();
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 <!--fin body-->
@@ -161,8 +196,8 @@ if (isset($_SESSION['registro_exitoso'])) {
         </ul>
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
-        <a class="col " href="consulta.php">
-          <button class="rounded-4">
+        <a class="col" href="#" onclick="mostrarPopup()">
+          <button>
             Consultar emprendedores
           </button>
         </a>

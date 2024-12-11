@@ -194,9 +194,9 @@ foreach ($ciudades as $ciudad) {
             </div>
             <div class="col-6 col-lg-2 mb-3">
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/login.html">Inciar sesión</a></li>
-                    <li class="mb-2"><a href="/registro.html">Registro</a></li>
-                    <li class="mb-2"><a href="/terminos-condiciones.html">Términos y condiciones</a></li>
+                    <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
+                    <li class="mb-2"><a href="registro.php">Registro</a></li>
+                    <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
                 </ul>
             </div>
             <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">

@@ -7,63 +7,63 @@ session_start();
 
 // Comprobar si el formulario fue enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recoger los datos del formulario
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];    
-    $documento = $_POST['documento'];
-    $telefono = $_POST['telefono'];
-    $email = $_POST['email'];
-    $nombre_empresa = $_POST['nombre_empresa'];   
-    $sector = $_POST['sector'];
-    $descripcion = $_POST['descripcion'];
-    $departamento = $_POST['departamento'];
-    $ciudad = $_POST['ciudad'];     
-    $clave = $_POST['clave']; // 'clave' es el nombre del campo en el formulario
-   
+  // Recoger los datos del formulario
+  $nombre = $_POST['nombre'];
+  $apellido = $_POST['apellido'];
+  $documento = $_POST['documento'];
+  $telefono = $_POST['telefono'];
+  $email = $_POST['email'];
+  $nombre_empresa = $_POST['nombre_empresa'];
+  $sector = $_POST['sector'];
+  $descripcion = $_POST['descripcion'];
+  $departamento = $_POST['departamento'];
+  $ciudad = $_POST['ciudad'];
+  $clave = $_POST['clave']; // 'clave' es el nombre del campo en el formulario
 
-    // Validar que los campos no estén vacíos
-    if (empty($nombre) || empty($apellido) || empty($documento) || empty($telefono) || empty($email) || empty($nombre_empresa) || empty($sector) || empty($descripcion) || empty($departamento) || empty($ciudad) || empty($clave)){
-        echo "Por favor, rellena todos los campos.";
-        exit;  // Detener la ejecución si algún campo está vacío
+
+  // Validar que los campos no estén vacíos
+  if (empty($nombre) || empty($apellido) || empty($documento) || empty($telefono) || empty($email) || empty($nombre_empresa) || empty($sector) || empty($descripcion) || empty($departamento) || empty($ciudad) || empty($clave)) {
+    echo "Por favor, rellena todos los campos.";
+    exit;  // Detener la ejecución si algún campo está vacío
+  }
+
+  // Cifrar la contraseña antes de almacenarla
+  $claveCifrada = password_hash($clave, PASSWORD_DEFAULT);
+
+  // Insertar el nuevo usuario en la base de datos
+  try {
+    // Consulta SQL
+    $query = "INSERT INTO usuarios (nombre, apellido, documento, telefono, email, nombre_empresa, sector, descripcion, departamento, ciudad, clave) VALUES (:nombre, :apellido, :documento, :telefono, :email, :nombre_empresa, :sector, :descripcion, :departamento, :ciudad, :clave)";
+    $stmt = $pdo->prepare($query);
+
+    // Vincular parámetros
+    $stmt->bindParam(':nombre', $nombre);
+    $stmt->bindParam(':apellido', $apellido);
+    $stmt->bindParam(':documento', $documento);
+    $stmt->bindParam(':telefono', $telefono);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':nombre_empresa', $nombre_empresa);
+    $stmt->bindParam(':sector', $sector);
+    $stmt->bindParam(':descripcion', $descripcion);
+    $stmt->bindParam(':departamento', $departamento);
+    $stmt->bindParam(':ciudad', $ciudad);
+    $stmt->bindParam(':clave', $claveCifrada);  // 'clave' es la columna en la base de datos
+
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+      // Guardar mensaje de éxito en la sesión
+      $_SESSION['registro_exitoso'] = "¡Registro exitoso! Bienvenido, $nombre.";
+
+      // Redirigir a la página principal
+      header("Location: index.php");  // Redirige a index.php
+      exit;  // Detener la ejecución del script después de la redirección
+    } else {
+      echo "Hubo un error al registrar el usuario. Intenta nuevamente.";
     }
-
-    // Cifrar la contraseña antes de almacenarla
-    $claveCifrada = password_hash($clave, PASSWORD_DEFAULT);
-
-    // Insertar el nuevo usuario en la base de datos
-    try {
-        // Consulta SQL
-        $query = "INSERT INTO usuarios (nombre, apellido, documento, telefono, email, nombre_empresa, sector, descripcion, departamento, ciudad, clave) VALUES (:nombre, :apellido, :documento, :telefono, :email, :nombre_empresa, :sector, :descripcion, :departamento, :ciudad, :clave)";
-        $stmt = $pdo->prepare($query);
-
-        // Vincular parámetros
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':apellido', $apellido);
-        $stmt->bindParam(':documento', $documento);
-        $stmt->bindParam(':telefono', $telefono);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':nombre_empresa', $nombre_empresa);
-        $stmt->bindParam(':sector', $sector);
-        $stmt->bindParam(':descripcion', $descripcion);
-        $stmt->bindParam(':departamento', $departamento);
-        $stmt->bindParam(':ciudad', $ciudad);
-        $stmt->bindParam(':clave', $claveCifrada);  // 'clave' es la columna en la base de datos
-       
-
-        // Ejecutar la consulta
-        if ($stmt->execute()) {
-            // Guardar mensaje de éxito en la sesión
-            $_SESSION['registro_exitoso'] = "¡Registro exitoso! Bienvenido, $nombre.";
-
-            // Redirigir a la página principal
-            header("Location: index.php");  // Redirige a index.php
-            exit;  // Detener la ejecución del script después de la redirección
-        } else {
-            echo "Hubo un error al registrar el usuario. Intenta nuevamente.";
-        }
-    } catch (PDOException $e) {
-        echo "Error al registrar el usuario: " . $e->getMessage();
-    }
+  } catch (PDOException $e) {
+    echo "Error al registrar el usuario: " . $e->getMessage();
+  }
 }
 ?>
 
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="nav-link" href="registro.php">Registrarse</a>
           </li>
           <li class="nav-item button-header p-0 m-0">
-            <a class="nav-link a-button-header" aria-current="page" href="consulta.php">Consultar emprendedores</a>
+            <a class="nav-link a-button-header" href="#" onclick="mostrarPopup()">Consultar emprendedores</a>
           </li>
         </ul>
       </div>
@@ -258,7 +258,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
   </div>
   </div>
+
+  <!-- Modal Bootstrap -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Acceso Requerido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Debes iniciar sesión para consultar emprendedores.
+          <br>
+          <a href="login.php">Haz clic aquí para iniciar sesión.</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Bootstrap JavaScript -->
+  <script>
+    function mostrarPopup() {
+      // Muestra el modal utilizando Bootstrap
+      var myModal = new bootstrap.Modal(document.getElementById('loginModal'));
+      myModal.show();
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 <!--fin body-->
@@ -280,7 +307,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
       </div>
       <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
-        <a class="col" href="consulta.php">
+        <a class="col" href="#" onclick="mostrarPopup()">
           <button>
             Consultar emprendedores
           </button>

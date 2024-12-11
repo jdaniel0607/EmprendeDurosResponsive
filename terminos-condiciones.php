@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emprendeduros Iniciar sesión</title>
-  <!-- Estilos CSS -->
-  <link rel="stylesheet" href="estilos.css">
-  <!-- Estilos generales CSS -->
-  <link rel="stylesheet" href="estilos-generales.css">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Estilos generales CSS -->
+    <link rel="stylesheet" href="estilos-generales.css">
     <!-- fuente google -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
@@ -35,8 +35,7 @@
                         <a class="nav-link" href="registro.php">Registrarse</a>
                     </li>
                     <li class="nav-item button-header p-0 m-0">
-                        <a class="nav-link a-button-header" aria-current="page" href="consulta.php">Consultar
-                            emprendedores</a>
+                        <a class="nav-link a-button-header" href="#" onclick="mostrarPopup()">Consultar emprendedores</a>
                     </li>
                 </ul>
             </div>
@@ -137,39 +136,69 @@
             <li>Dirección: 221B Baker Street</li>
         </ul>
     </div>
+
+
+    <!-- Modal Bootstrap -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Acceso Requerido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Debes iniciar sesión para consultar emprendedores.
+                    <br>
+                    <a href="login.php">Haz clic aquí para iniciar sesión.</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Bootstrap JavaScript -->
+    <script>
+        function mostrarPopup() {
+            // Muestra el modal utilizando Bootstrap
+            var myModal = new bootstrap.Modal(document.getElementById('loginModal'));
+            myModal.show();
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
 
 <!--inicio footer-->
 <footer class="bd-footer py-2 py-md-2 mt-5 bg-body-tertiary">
     <div class="container py-2 py-md-5 px-2 px-md-3 text-body-secondary">
-      <div class="row d-flex justify-content-around">
-        <div class="col-lg-4 col-mb-1 mb-3 d-flex flex-column align-items-center">
-          <a>
-            <img src="images/logo-emprendedores.png">
-          </a>
+        <div class="row d-flex justify-content-around">
+            <div class="col-lg-4 col-mb-1 mb-3 d-flex flex-column align-items-center">
+                <a>
+                    <img src="images/logo-emprendedores.png">
+                </a>
+            </div>
+            <div class="col-6 col-lg-2 mb-3">
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
+                    <li class="mb-2"><a href="registro.php">Registro</a></li>
+                    <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
+                <a class="col" href="#" onclick="mostrarPopup()">
+                    <button>
+                        Consultar emprendedores
+                    </button>
+                </a>
+            </div>
         </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
-            <li class="mb-2"><a href="registro.php">Registro</a></li>
-            <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
-          <a class="col" href="consulta.php">
-            <button>
-              Consultar emprendedores
-            </button>
-          </a>
-        </div>
-      </div>
     </div>
     <div class="d-flex align-content-center justify-content-center">
-      <p>Creat by Emprendeduros Talento-tech-2024</p>
+        <p>Creat by Emprendeduros Talento-tech-2024</p>
     </div>
-  </footer>
-  <!--fin footer-->
+</footer>
+<!--fin footer-->
 
 </html>
