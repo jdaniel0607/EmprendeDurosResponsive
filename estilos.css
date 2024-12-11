@@ -191,29 +191,29 @@
 /* botones formulario login*/
 
 .butto1-login{
-    width: 80%;
-    height: 45px;
-    margin: 13px 0;
+    width: 80%!important;
+    height: 45px!important;
+    margin: 13px 0!important;
 }
 .butto2-login{
-    background-color: white;
-    border: solid 1px;
-    border-color: #FF7F50;
-    color: #FF7F50;;
+    background-color: white!important;
+    border: solid 1px!important;
+    border-color: #FF7F50!important;
+    color: #FF7F50!important;
 }
 
 .butto1-login:hover{
-    width: 80%;
-    height: 45px;
-    background-color:#E67147;
-    box-shadow: 0px 1px 4px 0px #686868;
+    width: 80%!important;
+    height: 45px!important;
+    background-color:#E67147!important;
+    box-shadow: 0px 1px 4px 0px #686868!important;
 }
 
 .butto2-login:hover{
-    background-color: white;
-    border: solid 1px;
-    border-color: #E67147;
-    color: #E67147;
+    background-color: white!important;
+    border: solid 1px!important;
+    border-color: #E67147!important;
+    color: #E67147!important;
 }
 /* botones carrusel*/
 .button-carrusel:hover{
@@ -343,9 +343,98 @@
 
 /* texto background carrusel*/
 .fondo-text{
-    background-color: white;
-    opacity: 50%;
+    background-color: black;
+    color: white !important;
+    opacity: 60%;
     border-radius: 16px;
 }
+/* estilos ver/ocultar password*/
+.toggle-eye {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+  }
 
+.password-container {
+    position: relative;
+    display: inline-block;
+  }
 
+/* blanco y negro imágenes home*/
+.filtro-escala-grises {
+    filter: grayscale(100%);
+}
+
+/* paginador imáganes del carrusel*/
+.bullets-carrusel{
+    height: 3px !important;
+    background-color: black !important;
+}
+
+/* boton editar datos y cerrar sesión del dashboard*/
+.boton-editar{
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    background-color: #FF7F50!important;
+    border-radius: 8px!important;
+    border: none!important;
+    box-shadow: none!important;
+    width: 250px!important;
+    text-align: center!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+.boton-cerrar-s{
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #FF7F50 !important;
+    background-color: white!important;
+    border-radius: 8px!important;
+    border: 1px solid #FF7F50!important;
+    box-shadow: none!important;
+    width: 250px!important;
+    text-align: center!important;
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+.boton-editar:hover{
+    color: white !important;
+    background-color: #E67147!important;
+    box-shadow: 0px 1px 4px 0px #686868!important;
+    text-decoration: none!important;
+}
+
+.boton-cerrar-s:hover{
+    background-color: white !important;
+    border: solid 1px !important;
+    border-color: #E67147 !important;
+    color: #E67147 !important;
+    box-shadow: 0px 1px 4px 0px #686868!important;
+}
+
+.boton-cerrar-s:visited{
+    color: #E67147 !important;
+    text-decoration: none!important;
+}
+
+.boton-editar:visited{
+    color: white !important;
+    width: 250px !important;
+}
+
+/* Modal inicio de sesión*/
+.modal-lobby{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

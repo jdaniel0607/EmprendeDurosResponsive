@@ -67,14 +67,14 @@ footer{
 button{
     height: 50px;
     width: auto;
-    background-color: #FF7F50;
+    background-color: #FF7F50!important;
     border-radius: 8px;
     border: none;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 16px!important;
+    font-weight: 600!important;
     box-shadow: none;
     padding: 15px 32px;
-    color: white;
+    color: white!important;
     text-align: center;
     text-decoration: none;
     display: inline-block;
