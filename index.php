@@ -190,7 +190,7 @@ if (isset($_SESSION['registro_exitoso'])) {
       </div>
       <div class="col-6 col-lg-2 mb-3">
         <ul class="list-unstyled">
-          <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
+          <li class="mb-2"><a href="login.php">Iniciar sesión</a></li>
           <li class="mb-2"><a href="registro.php">Registro</a></li>
           <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
         </ul>
