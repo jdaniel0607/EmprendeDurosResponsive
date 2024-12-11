@@ -36,16 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       header("Location: dashboard.php"); // Redirigir al panel de usuario
       exit;
     } else {
-      echo "Contraseña incorrecta.";
+      $_SESSION['error'] = "Contraseña incorrecta.";
+      header("Location: login.php"); // Redirigir de vuelta a login
+      exit;
     }
   } else {
-    echo "El usuario no existe.";
+    $_SESSION['error'] = "El usuario no existe.";
+    header("Location: login.php"); // Redirigir de vuelta a login
+    exit;
   }
 }
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -100,6 +101,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="row w-100 my-2">
       <h1>Inciar sesión</h1>
     </div>
+
+    <!-- Mostrar mensaje de error si existe -->
+    <?php
+    if (isset($_SESSION['error'])) {
+      echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error'] . '</div>';
+      unset($_SESSION['error']); // Limpiar el mensaje de error después de mostrarlo
+    }
+    ?>
+
     <form class="row col-md-10 g-3 bg-body p-4 rounded-4 justify-content-center align-items-center" action="login.php" method="POST">
       <div class="col-md-8">
         <label for="exampleFormControlInput1" class="form-label">Correo electrónico</label>
