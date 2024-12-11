@@ -76,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
   <script src="https://kit.fontawesome.com/f7302fb63d.js" crossorigin="anonymous"></script>
 
 </head>
+
 <!--comienzo header-->
 <header class="container d-inline p-1 justify-content-center">
   <nav class="navbar navbar-expand-lg w-100">
@@ -166,5 +167,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['actualizar'])) {
 
 </body>
 <!--fin body-->
+<!--inicio footer-->
+<footer class="bd-footer py-2 py-md-2 mt-5 bg-body-tertiary">
+  <div class="container py-2 py-md-5 px-2 px-md-3 text-body-secondary">
+    <div class="row d-flex justify-content-around">
+      <div class="col-lg-4 col-mb-1 mb-3 d-flex flex-column align-items-center">
+        <a>
+          <img src="images/logo-emprendedores.png">
+        </a>
+      </div>
+      <div class="col-6 col-lg-2 mb-3">
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="login.php">Inciar sesión</a></li>
+          <li class="mb-2"><a href="registro.php">Registro</a></li>
+          <li class="mb-2"><a href="terminos-condiciones.php">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="col-12 col-lg-4 mb-3 d-flex flex-column align-items-center">
+        <a class="col" href="#" onclick="mostrarPopup()">
+          <button>
+            Consultar emprendedores
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-content-center justify-content-center">
+    <p>Creat by Emprendeduros Talento-tech-2024</p>
+  </div>
+</footer>
+<!--fin footer-->
 
 </html>

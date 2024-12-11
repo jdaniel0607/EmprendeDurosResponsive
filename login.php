@@ -124,7 +124,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-md-8 d-flex flex-column align-items-center mt-3 align-text-center">
         <button type="submit" class="w-100 mb-3 rounded-4" id="boton-ingresar" name="boton-ingresar">Ingresar</button>
-        <button type="submit" class="w-100 rounded-4 butto2-login">Cancelar</button>
+        <button type="button" class="w-100 rounded-4 butto2-login" onclick="window.location.href='index.php';">Cancelar</button>
+
       </div>
     </form>
   </div>
